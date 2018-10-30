@@ -10,4 +10,8 @@ pipeline {
       }
     }
   }
+  post {
+    success { gerritReview score:1, message:'It works' }
+    failure { gerritReview score:-1 }
+  }
 }
