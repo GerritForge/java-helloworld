@@ -4,6 +4,11 @@ pipeline {
     maven 'Maven 3.5.4'
   }
   stages {
+    stage ('env') {
+      steps {
+        sh 'printenv'
+      }
+    }
     stage ('Compile') {
       steps {
         sh 'mvn compile'
